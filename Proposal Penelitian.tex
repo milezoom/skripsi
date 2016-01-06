@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,left=4cm,top=3cm,right=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{tabulary}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{fancyhdr}
+
+\makeatletter
+\newcommand\tabfill[1]{%
+\dimen@\linewidth%
+\advance\dimen@\@totalleftmargin%
+\advance\dimen@-\dimen\@curtab%
+\parbox[t]\dimen@{\raggedright #1\ifhmode\strut\fi}%
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+\begin{figure}
+  \centering
+  \includegraphics{logo_UI_hitam.png}
+\end{figure}
+\begin{center}
+  \textbf{UNIVERSITAS INDONESIA}\\
+  \vfill
+  \textbf{KORELASI PENYEBARAN INFORMASI MELALUI MEDIA SOSIAL DENGAN TINGKAT POPULARITAS SUATU TEMPAT WISATA}\\
+  \vfill
+  \textbf{PROPOSAL PENELITIAN}\\
+  \vfill
+  \textbf{MUSLIM}\\
+  \textbf{1206208845}\\
+  \vfill
+  \textbf{FAKULTAS ILMU KOMPUTER}\\
+  \textbf{PROGRAM STUDI SISTEM INFORMASI}\\
+  \textbf{DEPOK}\\
+  \textbf{MEI 2016}
+\end{center}
+  \thispagestyle{empty}
+\end{titlepage}
+
+
+\renewcommand{\abstractname}{\textbf{ABSTRAK}}
+\begin{abstract}
+    \vspace{10pt}
+    \begin{tabbing}
+        \hspace*{2.5cm}\=\hspace*{0.2cm}\=\hspace*{10cm}\kill
+        Nama \> : \> Muslim\\
+        Program Studi \> : \> Sistem Informasi\\
+        Judul \> : \> \tabfill{
+        Aplikasi Pencari Pekerjaan Dengan Memanfaatkan Perangkat Internet Of Things 
+        Dan Konsep Activity Feed}
+    \end{tabbing}
+    \vspace{10pt}
+    \blindtext
+\end{abstract}
+\newpage
+
+
+\section{Pendahuluan}
+\subsection{Latar Belakang}
+    Media sosial seringkali digunakan untuk menyebarkan informasi.
+    Salah satu informasi yang disebarkan adalah tempat wisata.
+    Adanya informasi ini membuat sebuah tempat wisata menjadi lebih mudah dijangkau.
+\subsection{Rumusan Masalah}
+    
+\subsection{Pertanyaan Penelitian}
+\subsection{Tujuan Penelitian}
+\subsection{Manfaat Penelitian}
+\subsection{Ruang Lingkup Penelitian}
+\newpage
+
+
+\section{Studi Literatur}
+\subsection{Sub1}
+\subsection{Sub2}
+\subsection{Sub3}
+\newpage
+
+
+\section{Metodologi}
+\subsection{Analisis Masalah}
+\subsection{Studi Literatur}
+\subsection{Perumusan Hipotesis}
+\subsection{Perumusan Instrumen Penelitian}
+\subsection{Pengumpulan Data}
+\subsection{Analisis Data}
+\subsection{Penarikan Kesimpulan}
+\newpage
+
+
+\section{Expektasi Hasil}
+
+\end{document}
