@@ -1,0 +1,118 @@
+\documentclass[]{article}
+\usepackage[a4paper,top=3cm,right=3cm,bottom=3cm,left=4cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{blindtext}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage[indonesian]{babel}
+\usepackage{csquotes}
+\usepackage[autolang=hyphen,backend=biber,style=authoryear,citestyle=apa,sorting=ynt]{biblatex}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\rfoot{\textsf{\textbf{Universitas Indonesia}}}
+\renewcommand{\headrulewidth}{0pt}
+
+\addbibresource{references.bib}
+\urlstyle{same}
+\renewcommand*{\finalnamedelim}{%
+  \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+  \addspace dan\space}
+
+
+\begin{document}
+\begin{spacing}{1.5}
+
+\pagenumbering{roman}
+
+\begin{titlepage}
+\begin{center}    
+\includegraphics{logo_UI_hitam.png}\\
+\uppercase{\textbf{universitas indonesia}}
+\vfill
+\uppercase{\textbf{<judul menyusul>}}
+\vfill
+\uppercase{\textbf{skripsi}}
+\vfill
+\uppercase{\textbf{Muslim}}\\
+\uppercase{\textbf{1206208845}}
+\vfill
+\uppercase{\textbf{fakultas ilmu komputer}}\\
+\uppercase{\textbf{program studi sistem imformasi}}\\
+\uppercase{\textbf{depok}}\\
+\uppercase{\textbf{mei 2016}}\\
+\end{center}
+\end{titlepage}
+
+\renewcommand{\abstractname}{\large Abstrak}
+\begin{abstract}
+\begin{center}
+    \begin{tabular}{l l p{8.78cm}}
+        Nama & : & Muslim \\
+        Program Studi & : & Sistem Informasi \\
+        Judul Skripsi & : & Lorem ipsum dolore sit amet consectuere adipising elit sit amet.
+        Seq quidila punco ren terate men ano in quidispil ren cut. 
+        Rom ela et ema dis tanpi ruk mis cer.
+        Lerru ridista men quo linca nen yukore.
+    \end{tabular}
+\end{center}
+\vspace{2em}
+\blindtext
+\vfill
+\end{abstract}
+\newpage
+
+\renewcommand{\contentsname}{Daftar Isi}
+\tableofcontents
+\addtocontents{toc}{~\hfill\textbf{Halaman}\par}
+\lhead{}
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Pendahuluan}
+\subsection{Latar Belakang}
+Pengguna media sosial di Indonesia cukup tinggi. Dari 255,5 juta penduduk yang ada di Indonesia,
+terdapat 72,7 juta sambungan internet yang digunakan (\cite{SK2015}). Kemudian, terdapat 72 juta
+akun media sosial aktif di Indonesia, dan 62 juta darinya diakses menggunakan sambungan 
+\textit{mobile} (\cite{SK2015}). Dengan demikian, walaupun memang tidak cukup besar, total akun
+media sosial (sekitar 24\% dari total penduduk di Indonesia) yang ada di Indonesia cukup banyak.
+
+Komentar di media sosial dapat digunakan untuk menentukan preferensi seseorang terhadap suatu
+produk. Analisis yang dilakukan pada komentar tersebut dapat memisahkan fitur-fitur apa saja yang
+menjadi perhatian bagi konsumen produk tersebut. Dari penilaian terhadap fitur-fitur tersebut,
+kemudian dapat ditentukan apakah produk tersebut disukai oleh konsumen (\cite{SM2012}).
+
+
+\begin{itemize}
+    \item Disisi lain procurement yang dilakukan perusahaan harus setepat mungkin agar tidak memberatkan finansial [buku]
+    \item Procurement ini berkaitan dengan jumlah produk yang akan diproduksi [ide-sendiri]
+    \item Planning procurement yang saat ini dilakukan kebanyakan bergantung dari hasi prediksi penjualan masa lalu [web]
+    \item Proses planning ini dapat ditingkatkan akurasinya dengan bantuan data dari media sosial yang lebih cepat di
+        update [ide-sendiri]
+\end{itemize}
+\par
+\begin{itemize}
+    \item 
+\end{itemize}
+\par
+\subsection{Rumusan Masalah}
+\newpage
+
+\section{Tinjauan Pustaka}
+\subsection{\textit{Sentiment Analysis} untuk menentukan Produk}
+\subsection{Metode untuk \textit{Procurement Planning}}
+\newpage
+
+\renewcommand{\refname}{Daftar Pustaka}
+\printbibliography
+
+\end{spacing}
+\end{document}
