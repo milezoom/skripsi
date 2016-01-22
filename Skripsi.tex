@@ -6,6 +6,9 @@
 \usepackage{graphicx}
 \usepackage{setspace}
 \usepackage{blindtext}
+\usepackage{eso-pic}
+\usepackage{transparent}
+\usepackage{comment}
 \usepackage{indentfirst}
 \usepackage{hyperref}
 \usepackage{url}
@@ -26,6 +29,16 @@
   \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
   \addspace dan\space}
 
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\hspace{1cm}
+\transparent{0.3}\includegraphics[width=13cm,height=13cm,%
+    keepaspectratio]{logo_UI_bg.png}%
+\vfill
+}}}
 
 \begin{document}
 \begin{spacing}{1.5}
@@ -51,6 +64,7 @@
 \end{center}
 \end{titlepage}
 
+\begin{comment}
 \renewcommand{\abstractname}{\large Abstrak}
 \begin{abstract}
 \begin{center}
@@ -68,7 +82,9 @@
 \vfill
 \end{abstract}
 \newpage
+\end{comment}
 
+\AddToShipoutPicture{\BackgroundPic}
 \renewcommand{\contentsname}{Daftar Isi}
 \tableofcontents
 \addtocontents{toc}{~\hfill\textbf{Halaman}\par}
@@ -80,35 +96,82 @@
 \section{Pendahuluan}
 \subsection{Latar Belakang}
 Pengguna media sosial di Indonesia cukup tinggi. Dari 255,5 juta penduduk yang ada di Indonesia,
-terdapat 72,7 juta sambungan internet yang digunakan (\cite{SK2015}). Kemudian, terdapat 72 juta
+terdapat 72,7 juta sambungan internet yang digunakan (\cite{Sim2015}). Kemudian, terdapat 72 juta
 akun media sosial aktif di Indonesia, dan 62 juta darinya diakses menggunakan sambungan 
-\textit{mobile} (\cite{SK2015}). Dengan demikian, walaupun memang tidak cukup besar, total akun
+\textit{mobile} (\cite{Sim2015}). Dengan demikian, walaupun memang tidak cukup besar, total akun
 media sosial (sekitar 24\% dari total penduduk di Indonesia) yang ada di Indonesia cukup banyak.
 
 Komentar di media sosial dapat digunakan untuk menentukan preferensi seseorang terhadap suatu
 produk. Analisis yang dilakukan pada komentar tersebut dapat memisahkan fitur-fitur apa saja yang
 menjadi perhatian bagi konsumen produk tersebut. Dari penilaian terhadap fitur-fitur tersebut,
-kemudian dapat ditentukan apakah produk tersebut disukai oleh konsumen (\cite{SM2012}).
+kemudian dapat ditentukan apakah produk tersebut disukai oleh konsumen (\cite{Sub2012}).
+
+Kemudian informasi tersebut dapat dijadikan dasar untuk menghitung seberapa besar \textit{demand}
+yang ada untuk produk tersebut. Besar \textit{demand} ini dapat menjadi dasar dalam menentukan
+banyak barang yang akan diproduksi perusahaan. Dengan demikian secara tidak langsung hasil
+analisis opini di media sosial dapat menjadi bahan pertimbangan ketika ingin melakukan 
+\textit{procurement planning}.
+
+\textit{Procurement planning} ini penting, terutama jika perusahaan memiliki dana yang terbatas,
+sehingga pembelian material dan produksi yang dilakukan harus seoptimal mungkin. Karena itu,
+analisis yang digunakan untuk memprediksi \textit{demand} yang ada harus akurat. Penggunaan
+media sosial memang dapat membantu untuk memprediksi \textit{demand}, dan mengkonversinya
+kebutuhan material yang akan digunakan untuk produksi. Tetapi, akurasi dari penggunaan media
+sosial sendiri masih dipertanyakan karena sulitnya untuk mengidentifikasi produk yang dimaksud
+oleh komentar. Kesulitan tersebut antara lain karena komentar yang ada pada media sosial umumnya
+tidak terstruktur dan seringkali \textit{out-of-context} (\cite{Lau201480}).
 
 
-\begin{itemize}
-    \item Disisi lain procurement yang dilakukan perusahaan harus setepat mungkin agar tidak memberatkan finansial [buku]
-    \item Procurement ini berkaitan dengan jumlah produk yang akan diproduksi [ide-sendiri]
-    \item Planning procurement yang saat ini dilakukan kebanyakan bergantung dari hasi prediksi penjualan masa lalu [web]
-    \item Proses planning ini dapat ditingkatkan akurasinya dengan bantuan data dari media sosial yang lebih cepat di
-        update [ide-sendiri]
-\end{itemize}
-\par
-\begin{itemize}
-    \item 
-\end{itemize}
-\par
 \subsection{Rumusan Masalah}
+Analisis komentar dari media sosial dapat menentukan produk yang dibutuhkan oleh konsumen. Namun,
+komentar di media sosial seringkali tidak cukup akurat sehingga hasil pengolahan yang ada juga
+menjadi tidak akurat. Penelitian ini akan membandingkan hasil prediksi media sosial dengan produksi
+dan penjualan yang dilakukan perusahaan, kemudian akan dihasilkan seberapa besar akurasi hasil 
+prediksi tersebut. Lalu, tidak semua media sosial dapat dijadikan untuk sumber informasi.
+Dengan demikian, penelitian ini akan menjawab pertanyaan penelitian sebagai berikut.
+\begin{enumerate}
+    \item Seberapa akurat hasil prediksi media sosial terhadap kebutuhan material untuk produksi jika
+        dibandingkan dengan produksi dan penjualan yang dilakukan oleh perusahaan sesungguhnya.
+    \item Kriteria apa saja yang menentukan apakah media sosial layak untuk dijadikan sumber data untuk 
+        \textit{procurement planning} di perusahaan 
+        tersebut.
+\end{enumerate}
 \newpage
 
 \section{Tinjauan Pustaka}
 \subsection{\textit{Sentiment Analysis} untuk menentukan Produk}
+\textit{Sentiment analysis} adalah sebuah metode yang ditujukan untuk menganalisis opini konsumen tentang
+suatu fitur dari produk yang dtiampikan pada komentar di internet (\cite{Lau201480}). 
+\textit{Sentiment analysis} melibatkan identifikasi terhadap tiga hal (\cite{Nas2003}) yaitu,
+\begin{itemize}
+    \item ekspresi sentimen
+    \item polaritas dan kekuatan dari suatu ekspresi
+    \item hubungan sentimen tersebut dengan target subjeknya
+\end{itemize}
+Ekspresi sentimen didefinisikan sebagai sebuah kata sifat yang dapat ditentukan polaritasnya. Contoh ekspresi
+sentimen adalah "bagus", "baik", "kurang menawan" dan "terlalu mahal". Kata sifat ini tidak selalu berdiri
+sendiri, tetapi juga dapat berbentuk frasa jika digabungkan dengan kata lain yang menentukan derajat dari
+sifat tersebut, seperti misalnya "sedikit buruk".
+
+Ekspresi sentimen dalam sebuah komentar biasanya ditujukan untuk produk tertentu. Karena itu setelah 
+ditentukan polaritas dari ekpresi tersebut, dapat dinilai apakah suatu fitur atau secara keseluruhan 
+produk tersebut bernilai positif atau negatif dari sudut pandang konsumen tersebut. Kemudian hasil penilaian
+tersebut digabungkan dengan hasil penilaian lainnya untuk selanjutnya dianalisis secara keseluruhan apakah
+produk tersebut buruk atau baik. Hasil penilaian tersebut akan digunakan untuk mempertimbangkan 
+tindakan yang diambil oleh perusahaan selanjutnya. Di dalam penelitian ini, hasil penilaian tersebut
+digunakan untuk menentukan banyak produk yang akan diproduksi oleh perusahaan. Banyak produk ini 
+terkait dengan \textit{procurement planning} yang akan dilakukan oleh perusahaan sebelum produksi dilakukan.
+
 \subsection{Metode untuk \textit{Procurement Planning}}
+\textit{Procurement planning} adalah perencanaan yang dilakukan perusahaan untuk mempersiapkan material 
+yang akan digunakan untuk produksi. Proses perencanaan ini cukup penting karena cukup berpengaruh pada 
+\textit{cost} yang dikeluarkan oleh perusahaan. Karena itu perusahaan harus mempertahankan keseimbangan \textit{cost}
+dan \textit{revenue} yang ada ditengah \textit{demand} yang sensitif terhadap harga(\cite{Geu2009390}).
+
+Dengan demikian, perusahaan harus metode yang tepat untuk merencanakan \textit{procurement}. Beberapa
+metode telah dikembangkan sebelumnya misalnya dengan melakukan peringkat nilai dari material dan
+seberapa besar suplai yang dapat diberikan oleh \textit{supplier} (\cite{Sun201097}). Besar suplai tersebut
+akan disesuaikan dengan \textit{demand} yang diketahui dari pengolahan data hasil \textit{sentiment anlysis}.
 \newpage
 
 \renewcommand{\refname}{Daftar Pustaka}
